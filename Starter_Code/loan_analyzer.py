@@ -93,8 +93,16 @@ print(f"With {remaining_months} months remaining and a discount rate of {discoun
 
 # If Present Value represents what the loan is really worth, does it make sense to buy the loan at its cost?
 # @TODO: Write a conditional statement (an if-else statement) to decide if the present value represents the loan's fair value.
+
+#not exactly sure what you want us to do here, but making a conditional showing present value does represent fair value
+present_value_equals_fair_value = True
+if present_value_equals_fair_value == True:
+    fair_value = present_value
+    print(f"The fair value is ${fair_value:.2f}.")
+
 #    If the present value of the loan is greater than or equal to the cost, then print a message that says the loan is worth at least the cost to buy it.
 #    Else, the present value of the loan is less than the loan cost, then print a message that says that the loan is too expensive and not worth the price.
+
 #pulling in the price
 cost=loan.get("loan_price")
 
@@ -133,7 +141,6 @@ def calc_present_value(future_value, remaining_months, annual_discount_rate):
     return present_value
 
 
-
 # @TODO: Use the function to calculate the present value of the new loan given below.
 #    Use an `annual_discount_rate` of 0.2 for this new loan calculation.
 annual_discount_rate = 0.2
@@ -146,7 +153,7 @@ future_value = new_loan["future_value"]
 remaining_months = new_loan["remaining_months"]
 #print(remaining_months)
 
-#calculating present value of new loan
+#calculating present value of new loan using my new function
 present_value = calc_present_value(future_value, remaining_months, annual_discount_rate)
 print(f"The present value of the loan is: ${present_value:.2f}")
 
